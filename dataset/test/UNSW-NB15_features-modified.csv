@@ -1,0 +1,44 @@
+No.,Name,Type ,Description,feature_type
+5,proto,nominal,Transaction protocol,flow
+6,state,nominal,"Indicates to the state and its dependent protocol, e.g. ACC, CLO, CON, ECO, ECR, FIN, INT, MAS, PAR, REQ, RST, TST, TXD, URH, URN, and (-) (if not used state)",basic
+7,dur,Float,Record total duration,basic
+8,sbytes,Integer,Source to destination transaction bytes ,basic
+9,dbytes,Integer,Destination to source transaction bytes,basic
+10,sttl,Integer,Source to destination time to live value ,basic
+11,dttl,Integer,Destination to source time to live value,basic
+12,sloss,Integer,Source packets retransmitted or dropped ,basic
+13,dloss,Integer,Destination packets retransmitted or dropped,basic
+14,service,nominal,"http, ftp, smtp, ssh, dns, ftp-data ,irc  and (-) if not much used service",basic
+15,sload,Float,Source bits per second,basic
+16,dload,Float,Destination bits per second,basic
+17,spkts,integer,Source to destination packet count ,basic
+18,dpkts,integer,Destination to source packet count,basic
+19,swin,integer,Source TCP window advertisement value,content
+20,dwin,integer,Destination TCP window advertisement value,content
+21,stcpb,integer,Source TCP base sequence number,content
+22,dtcpb,integer,Destination TCP base sequence number,content
+23,smean,integer,Mean of the ?ow packet size transmitted by the src ,content
+24,dmean,integer,Mean of the ?ow packet size transmitted by the dst ,content
+25,trans_depth,integer,Represents the pipelined depth into the connection of http request/response transaction,content
+26,response_body_len,integer,Actual uncompressed content size of the data transferred from the server�s http service.,content
+27,sjit,Float,Source jitter (mSec),time
+28,djit,Float,Destination jitter (mSec),time
+31,sinpkt,Float,Source interpacket arrival time (mSec),time
+32,dinpkt,Float,Destination interpacket arrival time (mSec),time
+33,tcprtt,Float,"TCP connection setup round-trip time, the sum of �synack� and �ackdat�.",time
+34,synack,Float,"TCP connection setup time, the time between the SYN and the SYN_ACK packets.",time
+35,ackdat,Float,"TCP connection setup time, the time between the SYN_ACK and the ACK packets.",time
+36,is_sm_ips_ports,Binary,"If source (1) and destination (3)IP addresses equal and port numbers (2)(4)  equal then, this variable takes value 1 else 0",additional
+37,ct_state_ttl,Integer,No. for each state (6) according to specific range of values for source/destination time to live (10) (11).,additional
+38,ct_flw_http_mthd,Integer,No. of flows that has methods such as Get and Post in http service.,additional
+39,is_ftp_login,Binary,If the ftp session is accessed by user and password then 1 else 0. ,additional
+40,ct_ftp_cmd,integer,No of flows that has a command in ftp session.,additional
+41,ct_srv_src,integer,No. of connections that contain the same service (14) and source address (1) in 100 connections according to the last time (26).,additional
+42,ct_srv_dst,integer,No. of connections that contain the same service (14) and destination address (3) in 100 connections according to the last time (26).,additional
+43,ct_dst_ltm,integer,No. of connections of the same destination address (3) in 100 connections according to the last time (26).,additional
+44,ct_src_ltm,integer,No. of connections of the same source address (1) in 100 connections according to the last time (26).,additional
+45,ct_src_dport_ltm,integer,No of connections of the same source address (1) and the destination port (4) in 100 connections according to the last time (26).,additional
+46,ct_dst_sport_ltm,integer,No of connections of the same destination address (3) and the source port (2) in 100 connections according to the last time (26).,additional
+47,ct_dst_src_ltm,integer,No of connections of the same source (1) and the destination (3) address in in 100 connections according to the last time (26).,additional
+48,attack_cat,nominal,"The name of each attack category. In this data set , nine categories e.g. Fuzzers, Analysis, Backdoors, DoS Exploits, Generic, Reconnaissance, Shellcode and Worms",label
+49,label,binary,0 for normal and 1 for attack records,label
